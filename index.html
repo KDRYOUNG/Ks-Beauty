@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS BEAUTY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="announcement">
+        LIVRAISON GRATUITE À PARTIR DE 60€ D'ACHAT
+    </div>
+
+    <!-- Menu latéral -->
+    <div class="side-menu">
+        <div class="menu-header">
+            <a href="index.html"><div class="brand">KS BEAUTY</div></a>
+            <button class="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">Qui sommes-nous</a>
+        </nav>
+    </div>
+    
+    <!-- Overlay pour le menu -->
+    <div class="menu-overlay"></div>
+
+    <nav class="main-nav">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <a href="index.html"><div class="brand">KS BEAUTY</div></a>
+        
+        <div class="nav-right">
+            <a href="#wishlist">
+                <i class="fas fa-heart"></i>
+                <span class="count">0</span>
+            </a>
+            <a href="#cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>KS BEAUTY</h1>
+            <a href="#products" class="cta-button">DÉCOUVRIR NOS PRODUITS</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="best-sellers">
+            <h2>DÉCOUVREZ NOS BEST SELLERS</h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <a href="product.html?id=1" class="product-image-link">
+                            <img src="newimage.png" alt="Extensions">
+                        </a>
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <a href="product.html?id=1" class="product-name">
+                            <h3>KIT EXTENSIONS DE CILS – VOLUME LÉGER</h3>
+                        </a>
+                        <p class="price">29.99€</p>
+                       
+                    </div>
+                </div>
+                
+               
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <a href="product.html?id=3" class="product-image-link">
+                            <img src="0A6F3EFC-C21C-4876-B2D8-3DB5AA718523.PNG" alt="Formations">
+                        </a>
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <a href="product.html?id=3" class="product-name">
+                            <h3>GEL ADHÉSIF</h3>
+                        </a>
+                        <p class="price">14.99€</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Wishlist -->
+    <div class="modal wishlist-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ma Wishlist</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="wishlist-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Panier -->
+    <div class="modal cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Mon Panier</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items"></div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        Total: <span class="total-amount">0.00€</span>
+                    </div>
+                    <button class="checkout-btn">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

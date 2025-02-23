@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous - Ks Beauty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .about-hero {
+            height: 60vh;
+            background-color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5em;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding: 20px;
+            letter-spacing: 2px;
+        }
+
+        .about-section {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 40px;
+            position: relative;
+            background: transparent;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: #f1f1f1;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .about-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5em;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 400;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 1px;
+            background-color: white;
+        }
+
+        .about-image-container {
+            position: relative;
+        }
+
+        .about-image-container:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid white;
+            z-index: -1;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3em;
+            margin-top: 30px;
+            color: white;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #111;
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+
+        .side-menu.show {
+            left: 0;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .close-menu {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-nav {
+            padding: 20px;
+        }
+
+        .menu-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 968px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .about-section {
+                padding: 20px;
+            }
+
+            .about-text h2 {
+                font-size: 2em;
+            }
+
+            .about-image-container:before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2em;
+            }
+
+            .about-text h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton Menu -->
+    <button class="menu-button" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menu latéral -->
+    <div class="side-menu">
+        <div class="menu-header">
+            <a href="index.html"><div class="brand">KS BEAUTY</div></a>
+            <button class="close-menu" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">Qui sommes-nous</a>
+        </nav>
+    </div>
+
+    <div class="about-hero">
+        <h1>Notre Histoire</h1>
+    </div>
+
+    <main>
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>La naissance de Ks Beauty</h2>
+                    <p>Tout a commencé avec une passion commune : la beauté. Moi, Kahylee, et ma meilleure amie Imene avons toujours adoré l'univers du maquillage et des cils. Depuis toutes petites, on passait des heures à tester des looks, à chercher les meilleures astuces et à aider nos amies à se sentir belles et confiantes.</p>
+                    
+                    <p>Mais un jour, on s'est posé une question : pourquoi ne pas créer notre propre marque ? Une marque qui reflète nos valeurs, notre style et surtout, qui propose des extensions de cils de qualité, accessibles à toutes. C'est ainsi qu'est née Ks Beauty.</p>
+                    
+                    <p>À seulement 15 ans, on s'est lancé ce défi fou de bâtir notre propre entreprise. On voulait des produits qui allient confort, style et durabilité, tout en restant abordables. On a passé des mois à chercher les meilleurs fournisseurs, à tester des matériaux et à perfectionner nos collections.</p>
+                    
+                    <p>Aujourd'hui, Ks Beauty est bien plus qu'une marque : c'est notre rêve devenu réalité. Chaque paire de cils que nous vendons représente notre passion, notre travail et notre ambition. On espère que vous les aimerez autant que nous avons aimé les créer.</p>
+                    
+                    <div class="signature">Merci de faire partie de cette aventure avec nous !</div>
+                </div>
+                <div class="about-image-container">
+                    <img src="photo.JPG" alt="Les fondatrices de Ks Beauty" class="about-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.querySelector('.side-menu');
+            sideMenu.classList.toggle('show');
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

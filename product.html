@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS BEAUTY - Détail Produit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="announcement">
+        LIVRAISON GRATUITE À PARTIR DE 60€ D'ACHAT
+    </div>
+
+    
+    <nav class="main-nav">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <a href="index.html"><div class="brand">KS BEAUTY</div></a>
+        
+        <div class="nav-right">
+            <a href="#wishlist">
+                <i class="fas fa-heart"></i>
+                <span class="count">0</span>
+            </a>
+            <a href="#cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="count">0</span>
+            </a>
+        </div>
+    </nav>
+    <div class="side-menu">
+        <div class="menu-header">
+            <a href="index.html"><div class="brand">KS BEAUTY</div></a>
+            <button class="close-menu" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="menu-nav">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">Qui sommes-nous</a>
+        </nav>
+    </div>
+    
+
+  
+
+    <!-- Modal Wishlist -->
+    <div class="modal wishlist-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ma Wishlist</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="wishlist-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Panier -->
+    <div class="modal cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Mon Panier</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items"></div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        Total: <span class="total-amount">0.00€</span>
+                    </div>
+                    <button class="checkout-btn">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="product-detail">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="" alt="" id="productImage">
+            </div>
+            <div class="thumbnail-list">
+                <!-- Les miniatures seront ajoutées dynamiquement -->
+            </div>
+        </div>
+
+        <div class="product-info-detail">
+            <h1 id="productName"></h1>
+            <div class="product-meta">
+                <p class="price" id="productPrice"></p>
+                <div class="stock-status">En stock</div>
+            </div>
+
+            <div class="product-description">
+                <h2>Description</h2>
+                <p id="productDescription"></p>
+            </div>
+
+            <div class="product-features">
+                <h2>Caractéristiques</h2>
+                <ul id="productFeatures">
+                    <!-- Les caractéristiques seront ajoutées dynamiquement -->
+                </ul>
+            </div>
+
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" id="quantity">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="add-to-cart-btn large">
+                    <i class="fas fa-shopping-bag"></i>
+                    Ajouter au panier
+                </button>
+                <button class="wishlist-btn large">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+
+            <div class="product-additional">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Livraison</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Livraison gratuite à partir de 60€ d'achat</p>
+                            <p>Livraison en 2-3 jours ouvrés</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Retours</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Retours gratuits sous 14 jours</p>
+                            <p>Produit non ouvert uniquement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.querySelector('.side-menu');
+            sideMenu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
